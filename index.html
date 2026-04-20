@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover India's Best Beaches | Beach Vibe India</title>
+    <meta name="description"
+        content="Explore the most stunning beaches in India — from Goa's golden shores to Andaman's pristine islands. Find your perfect beach getaway with our curated guide.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">🌊</span>
+                <span class="logo-text">Beach Vibe <span class="logo-accent">India</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#beaches" class="nav-link">Beaches</a></li>
+                <li><a href="#top-picks" class="nav-link">Top Picks</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+            <div class="hero-particles" id="heroParticles"></div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-tag">🏖️ India's Coastal Paradise</p>
+            <h1 class="hero-title">
+                Discover India's
+                <span class="hero-gradient">Most Beautiful</span>
+                Beaches
+            </h1>
+            <p class="hero-subtitle">
+                From the sun-kissed shores of Goa to the pristine islands of Andaman — explore, compare, and find your
+                perfect beach getaway.
+            </p>
+            <div class="hero-search-wrapper">
+                <div class="hero-search" id="heroSearch">
+                    <div class="search-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round">
+                            <circle cx="11" cy="11" r="7" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                    </div>
+                    <input type="text" id="searchInput" placeholder="Search beaches, states, activities..."
+                        autocomplete="off">
+                    <button class="search-btn" id="searchBtn">Explore</button>
+                </div>
+                <div class="search-suggestions" id="searchSuggestions"></div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="25">0</span>
+                    <span class="stat-label">Beaches</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="9">0</span>
+                    <span class="stat-label">States</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="7500">0</span>
+                    <span class="stat-label">KM Coastline</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section" id="beaches">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Explore</span>
+                <h2 class="section-title">Find Your Perfect Beach</h2>
+                <p class="section-subtitle">Filter by state, activity, or season to find the ideal beach destination</p>
+            </div>
+
+            <div class="filters-bar" id="filtersBar">
+                <div class="filter-group">
+                    <label class="filter-label">State</label>
+                    <select id="filterState" class="filter-select">
+                        <option value="all">All States</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Andaman & Nicobar">Andaman & Nicobar</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Activity</label>
+                    <select id="filterActivity" class="filter-select">
+                        <option value="all">All Activities</option>
+                        <option value="Swimming">Swimming</option>
+                        <option value="Surfing">Surfing</option>
+                        <option value="Snorkeling">Snorkeling</option>
+                        <option value="Scuba Diving">Scuba Diving</option>
+                        <option value="Water Sports">Water Sports</option>
+                        <option value="Sunset Views">Sunset Views</option>
+                        <option value="Nightlife">Nightlife</option>
+                        <option value="Trekking">Trekking</option>
+                        <option value="Wildlife">Wildlife</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Best Time</label>
+                    <select id="filterSeason" class="filter-select">
+                        <option value="all">Any Season</option>
+                        <option value="Oct-Mar">Winter (Oct - Mar)</option>
+                        <option value="Nov-Feb">Peak Winter (Nov - Feb)</option>
+                        <option value="Sep-May">Extended Season</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Sort By</label>
+                    <select id="filterSort" class="filter-select">
+                        <option value="rating">Highest Rated</option>
+                        <option value="name">Name (A-Z)</option>
+                        <option value="state">State</option>
+                    </select>
+                </div>
+                <button class="filter-reset" id="filterReset">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round">
+                        <path d="M3 12a9 9 0 0115-6.7L21 8M21 12a9 9 0 01-15 6.7L3 16" />
+                        <polyline points="21 3 21 8 16 8" />
+                        <polyline points="3 21 3 16 8 16" />
+                    </svg>
+                    Reset
+                </button>
+            </div>
+
+            <div class="results-info" id="resultsInfo">
+                <span id="resultCount">25 beaches found</span>
+                <div class="view-toggle">
+                    <button class="view-btn active" id="gridView" aria-label="Grid view">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                            <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                            <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                            <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                        </svg>
+                    </button>
+                    <button class="view-btn" id="listView" aria-label="List view">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="3" y="4" width="18" height="4" rx="1.5" />
+                            <rect x="3" y="10" width="18" height="4" rx="1.5" />
+                            <rect x="3" y="16" width="18" height="4" rx="1.5" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Beach Cards Grid -->
+            <div class="beaches-grid" id="beachesGrid">
+                <!-- Cards will be injected by JS -->
+            </div>
+
+            <div class="no-results" id="noResults" style="display:none;">
+                <div class="no-results-icon">🏝️</div>
+                <h3>No beaches found</h3>
+                <p>Try adjusting your filters or search query</p>
+                <button class="btn-primary" onclick="resetFilters()">Reset Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Picks Section -->
+    <section class="top-picks-section" id="top-picks">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Editor's Choice</span>
+                <h2 class="section-title">Top Rated Beaches</h2>
+                <p class="section-subtitle">Our handpicked selection of India's finest coastal gems</p>
+            </div>
+            <div class="top-picks-carousel" id="topPicksCarousel">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-tag">Why India</span>
+                    <h2 class="section-title">India's Incredible Coastline</h2>
+                    <p class="about-text">
+                        India boasts a stunning 7,516 km coastline stretching across 9 states and 4 union territories.
+                        From the serene backwaters of Kerala to the vibrant party beaches of Goa, the pristine coral
+                        atolls of Lakshadweep to the volcanic shores of Andaman — every coast tells a unique story.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🌅</div>
+                            <div>
+                                <h4>Stunning Sunsets</h4>
+                                <p>Watch the sun dip into the Arabian Sea on the west coast</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🐚</div>
+                            <div>
+                                <h4>Rich Marine Life</h4>
+                                <p>Coral reefs, dolphins, sea turtles, and exotic fish</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🏄</div>
+                            <div>
+                                <h4>Adventure Sports</h4>
+                                <p>Surfing, scuba diving, parasailing, and jet skiing</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🍛</div>
+                            <div>
+                                <h4>Coastal Cuisine</h4>
+                                <p>Fresh seafood and regional delicacies at every shore</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-map">
+                    <div class="map-card">
+                        <div class="map-header">
+                            <h3>🗺️ India's Beach Map</h3>
+                        </div>
+                        <div class="map-body" id="mapBody">
+                            <!-- India coastline visualization -->
+                            <div class="coast-info west">
+                                <span class="coast-label">West Coast</span>
+                                <span class="coast-detail">Arabian Sea</span>
+                            </div>
+                            <div class="india-outline">
+                                <svg viewBox="0 0 300 350" class="india-svg">
+                                    <!-- Simplified India outline -->
+                                    <path
+                                        d="M150,10 C160,10 180,15 190,25 C200,35 210,40 220,50 C230,60 240,70 245,85 C250,100 255,110 260,125 C265,140 268,155 270,170 C272,185 270,200 265,215 C260,230 250,245 240,260 C230,275 215,285 200,295 C185,305 170,315 155,325 C150,328 145,330 140,328 C135,325 125,315 115,305 C105,295 100,285 95,275 C90,260 85,245 82,230 C80,215 78,200 75,185 C73,170 70,155 68,140 C66,125 70,110 75,95 C80,80 90,65 100,55 C110,45 120,35 130,25 C140,15 145,10 150,10Z"
+                                        class="india-path" fill="none" stroke="url(#indiaGrad)" stroke-width="2" />
+                                    <defs>
+                                        <linearGradient id="indiaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#00d2ff" />
+                                            <stop offset="100%" style="stop-color:#3b82f6" />
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- Beach dots -->
+                                    <circle cx="78" cy="155" r="5" class="beach-dot" data-label="Goa">
+                                        <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" />
+                                    </circle>
+                                    <circle cx="75" cy="200" r="5" class="beach-dot" data-label="Kerala" />
+                                    <circle cx="250" cy="130" r="5" class="beach-dot" data-label="Andaman" />
+                                    <circle cx="85" cy="175" r="5" class="beach-dot" data-label="Karnataka" />
+                                    <circle cx="90" cy="130" r="5" class="beach-dot" data-label="Maharashtra" />
+                                    <circle cx="160" cy="260" r="5" class="beach-dot" data-label="Tamil Nadu" />
+                                    <circle cx="200" cy="150" r="5" class="beach-dot" data-label="Odisha" />
+                                    <circle cx="165" cy="240" r="5" class="beach-dot" data-label="Puducherry" />
+                                </svg>
+                            </div>
+                            <div class="coast-info east">
+                                <span class="coast-label">East Coast</span>
+                                <span class="coast-detail">Bay of Bengal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🌊</span>
+                    <span class="logo-text">Beach Vibe <span class="logo-accent">India</span></span>
+                    <p>Discover the best beaches India has to offer.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#beaches">Beaches</a>
+                    <a href="#top-picks">Top Picks</a>
+                    <a href="#about">About</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Top States</h4>
+                    <a href="#" onclick="filterByState('Goa')">Goa</a>
+                    <a href="#" onclick="filterByState('Kerala')">Kerala</a>
+                    <a href="#" onclick="filterByState('Andaman & Nicobar')">Andaman</a>
+                    <a href="#" onclick="filterByState('Karnataka')">Karnataka</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Beach Vibe India. Made with 🌊 for beach lovers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Beach Detail Modal -->
+    <div class="modal-overlay" id="beachModal">
+        <div class="modal-content" id="modalContent">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="beaches.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
